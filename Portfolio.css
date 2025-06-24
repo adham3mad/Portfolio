@@ -1,0 +1,215 @@
+html {
+  --section-background-color: linear-gradient(to bottom left, hsla(0, 3%, 6%, .582), rgba(12, 8, 24, .904));
+  --imp-text-color: #c770f0;
+  --linear-gradient: linear-gradient(270deg, #1b1429, #140f23);
+}
+
+:root {
+  --main-color: #6A0DAD;
+  --second-color: #00FFFF;
+  --font-color: #c82ee3;
+  --background-color: #F8F8F8;
+  --button-color: #FF4500;
+  --logo-content: " Emad";
+  --bs-link-hover-color-rgb: 10, 88, 202;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-image: var(--linear-gradient);
+}
+
+nav,
+.project-card {
+  background-image: var(--linear-gradient);
+}
+
+section {
+  background-image: var(--linear-gradient);
+  padding: 44px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.nav-link {
+  color: var(--second-color);
+}
+
+.nav-link:active {
+  color: var(--main-color);
+}
+
+.btn {
+  color: var(--imp-text-color);
+  transition: transform 1s ease, background-color 1s ease;
+}
+
+.btn:hover {
+  background-color: var(--imp-text-color) !important;
+  transform: scale(1.25);
+}
+
+p,
+h1 {
+  color: var(--second-color);
+}
+
+.card-text {
+  max-height: 143px;
+  min-height: 143px;
+  overflow: hidden;
+}
+
+.home-header {
+  animation: slid-in-left 1s ease-in-out;
+}
+
+h5,
+.project-card h5 {
+  color: var(--font-color);
+}
+
+li {
+  color: var(--second-color);
+  list-style: none;
+}
+
+.section-title,
+section h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  color: var(--imp-text-color);
+}
+
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 15px;
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  transition: transform 1.5s ease, margin-bottom 1s ease;
+}
+
+.project-card img:hover {
+  transform: scale(1.25);
+  margin-bottom: 8px;
+}
+
+.project-card {
+  min-height: 560px;
+  max-height: 630px;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.projects {
+  margin-bottom: 15px;
+  padding-bottom: 6rem;
+  padding-top: -15px;
+}
+
+/* #projects:hover .project-card {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(0, 0);
+} */
+
+.card-body {
+  min-height: 200px;
+  max-height: 200px;
+}
+
+
+.logo {
+  font-size: xx-large;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: var(--main-color);
+}
+
+.logo:hover {
+  color: var(--second-color);
+}
+
+.logo::after {
+  content: var(--logo-content);
+  font-size: x-large;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: var(--second-color);
+}
+
+.logo::after:hover {
+  color: var(--main-color);
+}
+
+.my-photo {
+  border-radius: 50%;
+  height: 100%;
+  width: 50%;
+  transition: transform 1s ease, content 1s ease;
+  -webkit-transition: transform 1s ease, content 1s ease;
+  -moz-transition: transform 1s ease, content 1s ease;
+}
+
+.my-photo:hover {
+  content: url("hey.png");
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+}
+
+footer {
+  background-image: var(--section-background-color);
+  color: var(--background-color);
+  padding: 30px 20px;
+}
+
+footer a {
+  color: var(--second-color);
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+footer a:hover {
+  color: var(--imp-text-color);
+  transform: scale(1.5%);
+}
+
+.pjr {
+  transform: translateX(50%);
+}
+
+.pjl {
+  transform: translateX(-20%);
+}
+
+.an {
+  transform: translateY(30%);
+}
+
+.visable {
+  opacity: 1 !important;
+  pointer-events: auto;
+  transform: translate(0, 0) !important;
+  transition: transform 1.3s ease, opacity 1.3s ease;
+  -webkit-transition: transform 1.3s ease, opacity 1.3s ease;
+  -moz-transition: transform 1.3s ease, opacity 1.3s ease;
+}
+
+@keyframes slid-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

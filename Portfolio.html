@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AdhamEmad</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="Portfolio.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand logo" href="#">adham</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#projects1">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about1">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills1">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact1">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="row mt-5 align-items-center">
+      <div class="col-md-6 home-header">
+        <h1 class="display-5 fw-bold mt-5">Hi, I'm Adham Emad</h1>
+        <p class="lead">A Passionate Frontend Web Developer</p>
+        <p>Crafting engaging and responsive web experiences. Let's build something amazing together.</p>
+        <a href="#projects" class="btn btn-outline-primary m-2">View My Work</a>
+      </div>
+      <div class="col-md-6 mt-3 pjr">
+        <img src="5.png" class="my-photo" id="avatar" alt="My Profile Photo">
+      </div>
+    </div>
+  </section>
+  <hr id="projects1">
+  <section id="projects" class="Projects mt-4">
+    <h2 class="section-title mt-5">My Recent Work</h2>
+    <div class="container project-container">
+      <div class="pjl card project-card" id="content">
+        <img src="image.png" alt="">
+        <div class="card-body">
+          <h5 class="card-title">Mega GYM</h5>
+          <p class="card-text">About
+            A dynamic and user-friendly website designed for fitness enthusiasts and gym owners. Features include class
+            schedules, trainer profiles, membership plans, and a contact form. Fully responsive for all devices.</p>
+          <div class="d-flex justify-content-center align-items-center">
+            <a href="https://github.com/adham3mad/GYM2" class="btn btn-outline-primary btn-sm mb-2">GitHub Repo</a>
+          </div>
+        </div>
+      </div>
+      <div class="pjr card project-card" id="content">
+        <img src="image2.png" alt="">
+        <div class="card-body">
+          <h5 class="card-title">E-commerce Website</h5>
+          <p class="card-text">design develop a fully functional, user-friendly e-commerce platform that allows
+            customers to browse, select, and purchase products securely online, providing a management system for the
+            store owner.
+          <div class="d-flex justify-content-center align-items-center">
+            <div class="d-flex justify-content-center align-items-center">
+              <a id="about1" href="https://github.com/adham3mad/ITI-FrontEnd-Angular-Project"
+                class="btn btn-outline-primary btn-sm mb-2">GitHub Repo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-light about mt-5">
+    <div class="container an">
+      <h2 class="section-title mt-3">A Little Bit About Me</h2>
+      <p id="skills1" class="mt-5">I am a self-taught frontend developer with a passion for clean design and
+        user-friendly experiences. I focus on building responsive web apps and continually improve my skills in modern
+        frameworks and tools.</p>
+    </div>
+  </section>
+  <section id="skills" class="py-5 skills mt-5">
+    <div class="container an">
+      <h2 class="section-title">My Skillset</h2>
+      <div class="row mt-5">
+        <div class="pjl col-md-6">
+          <h5>Languages & Frameworks</h5>
+          <ul class="mt-3">
+            <li>HTML, CSS, JavaScript, TypeScript</li>
+            <li>React, Bootstrap, Tailwind CSS</li>
+          </ul>
+        </div>
+        <div class="pjr col-md-6">
+          <h5>Tools & Concepts</h5>
+          <ul class="mt-3">
+            <li>Git, GitHub, VS Code, npm</li>
+            <li>Responsive Design, UI/UX, API Integration</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact1" class="bg-light py-5">
+    <div class="container an mt-5">
+      <h2 class="section-title">Let's Connect!</h2>
+      <p>I'm currently open to new opportunities. Feel free to reach out!</p>
+      <form id="contact-form">
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="Your Name" name="name" required>
+        </div>
+        <div class="mb-3">
+          <input type="email" class="form-control" placeholder="Your Email" name="email" required>
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="Subject" name="subject" required>
+        </div>
+        <div class="mb-3">
+          <textarea class="form-control" rows="4" placeholder="Message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-outline-primary an">Send Message</button>
+      </form>
+    </div>
+  </section>
+  <footer class="mt-5">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div>
+        <p>abdelmawlaadhm58@gmail.com</p>
+      </div>
+      <div class="">
+        <a href="https://linkedin.com/in/adham3mad"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/adham3mad"><i class="bi bi-github"></i></a>
+        <a href="https://www.facebook.com/abdalmawla.adhm"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/adham3madd/"><i class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+    <div class="text-center mt-3">© 2025 AdhamEmad. All rights reserved.</div>
+  </footer>
+  <script src="Portfolio.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
