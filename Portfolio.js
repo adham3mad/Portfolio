@@ -17,27 +17,25 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
     // Theme Switcher
-    const themeBtn = document.getElementById('theme-toggle');
+    const themeToggles = document.querySelectorAll('#theme-toggle, .theme-toggle-mobile');
     const currentTheme = localStorage.getItem('theme') || 'dark';
     
-    if (currentTheme === 'light') {
-        document.documentElement.setAttribute('data-theme', 'light');
-        themeBtn.innerHTML = '<i class="bi bi-sun-fill"></i>';
-    } else {
-        themeBtn.innerHTML = '<i class="bi bi-moon-fill"></i>';
+    function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        const iconClass = theme === 'light' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+        themeToggles.forEach(btn => {
+            btn.innerHTML = `<i class="${iconClass}"></i>`;
+        });
     }
 
-    themeBtn.addEventListener('click', () => {
-        const theme = document.documentElement.getAttribute('data-theme');
-        if (theme === 'light') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-            themeBtn.innerHTML = '<i class="bi bi-moon-fill"></i>';
-        } else {
-            document.documentElement.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
-            themeBtn.innerHTML = '<i class="bi bi-sun-fill"></i>';
-        }
+    setTheme(currentTheme);
+
+    themeToggles.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const theme = document.documentElement.getAttribute('data-theme');
+            setTheme(theme === 'light' ? 'dark' : 'light');
+        });
     });
 
     // Language Switcher
@@ -206,7 +204,14 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('a[href="#experience"]').textContent = translations[lang].navExperience;
         document.querySelector('a[href="#projects"]').textContent = translations[lang].navProjects;
         document.querySelector('a[href="#contact"]').textContent = translations[lang].navContact;
-        document.querySelector('.nav-right > .btn-primary').textContent = translations[lang].navHire;
+        document.querySelectorAll('.nav-right > .btn-primary, .nav-hire-mobile').forEach(el => {
+            el.textContent = translations[lang].navHire;
+        });
+
+        // Update Nav Toggles text
+        document.querySelectorAll('#lang-toggle, .lang-toggle-mobile').forEach(btn => {
+            btn.textContent = lang === 'ar' ? 'EN' : 'AR';
+        });
 
         // Update Hero
         document.querySelector('.hero-text h1').innerHTML = translations[lang].heroTitle;
@@ -303,9 +308,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('footer p').innerHTML = `&copy; 2026 Adham Emad. ${lang === 'ar' ? 'بُني بتميز.' : 'Built for excellence.'}`;
     }
 
-    langBtn.addEventListener('click', () => {
-        const nextLang = currentLang === 'en' ? 'ar' : 'en';
-        updateLanguage(nextLang);
+    const langToggles = document.querySelectorAll('#lang-toggle, .lang-toggle-mobile');
+    langToggles.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const nextLang = currentLang === 'en' ? 'ar' : 'en';
+            updateLanguage(nextLang);
+        });
     });
 
     // Initial language setup
