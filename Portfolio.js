@@ -62,12 +62,20 @@ document.addEventListener('DOMContentLoaded', () => {
             skillsTitle: 'Technical Skills',
             expTitle: 'Professional Timeline',
             internshipTitle: 'Internship',
+            internshipDate: 'Jun 2025 - Oct 2025',
             internshipRole: 'Backend Developer',
+            internshipCompany: 'Cloudcredits Technologies Pvt.Ltd',
             internshipDesc: 'Collaborated on 4 enterprise-level projects using ASP.NET Core. Implemented Clean Architecture and Repository Patterns to ensure maintainability.',
-            educationTitle: 'Education',
-            eduCS: 'B.Sc. Computer Science',
+            educationTitle: 'Education & Training',
+            rmdDate: 'Nov 2025 - Jul 2026',
+            rmdTitle: '.NET Full Stack Scholarship',
+            rmdOrg: 'Digital Egypt Pioneers (RMD)',
+            eduDate: '2022 - 2026 (Expected)',
+            eduCS: 'B.Sc. in Computer Science',
             eduUni: 'Marsa Matrouh University',
+            mcitDate: 'Oct 2025',
             eduMCIT: 'Digitopia Stage 3 - MCIT',
+            eduMCITDesc: 'MCIT E-Learning Program',
             contactLoc: 'Zagazig, Egypt',
             projectsTitle: 'Latest Projects',
             projectKarofa: 'Karofa | AI Compliance',
@@ -90,7 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
             formName: 'Your Name',
             formEmail: 'Your Email',
             formMsg: 'Your Message',
-            formBtn: 'Send Message'
+            formBtn: 'Send Message',
+            roles: ['Full Stack .NET Developer', 'Backend Specialist', 'Frontend Architect']
         },
         ar: {
             navAbout: 'حول',
@@ -108,13 +117,21 @@ document.addEventListener('DOMContentLoaded', () => {
             aboutP2: 'مع خبرة عملية في Clean Architecture ونمط Repository، أنا مخصص لكتابة كود قابل للصيانة والتوسع. أبحث حالياً عن تدريب أو دور بدوام جزئي للمساهمة في حلول برمجية مؤثرة.',
             skillsTitle: 'المهارات التقنية',
             expTitle: 'المسار المهني',
-            internshipTitle: 'تدريب',
-            internshipRole: 'مطور باك أند',
-            internshipDesc: 'شاركت في 4 مشاريع برمجية ضخمة باستخدام ASP.NET Core. قمت بتطبيق أنماط Clean Architecture و Repository لضمان جودة وسهولة صيانة الكود.',
-            educationTitle: 'التعليم',
-            eduCS: 'بكالوريوس علوم الحاسب',
+            internshipTitle: 'التدريب العملي',
+            internshipDate: 'يونيو 2025 - أكتوبر 2025',
+            internshipRole: 'مطور تطبيقات خلفية (Backend)',
+            internshipCompany: 'كلاود كريديتس للتكنولوجيا',
+            internshipDesc: 'المساهمة في 4 مشاريع برمجية كبرى باستخدام ASP.NET Core، مع تطبيق معايير Clean Architecture و Repository لضمان جودة الكود.',
+            educationTitle: 'التعليم والتدريب',
+            rmdDate: 'نوفمبر 2025 - يوليو 2026',
+            rmdTitle: 'منحة .NET Full Stack',
+            rmdOrg: 'رواد مصر الرقمية (RMD)',
+            eduDate: '2022 - 2026 (متوقع)',
+            eduCS: 'بكالوريوس في علوم الحاسب',
             eduUni: 'جامعة مرسى مطروح',
-            eduMCIT: 'ديجيتوبيا المرحلة 3 - وزارة الاتصالات',
+            mcitDate: 'أكتوبر 2025',
+            eduMCIT: 'مبادرة ديجيتوبيا (المرحلة الثالثة)',
+            eduMCITDesc: 'برنامج وزارة الاتصالات للتعلم عن بعد',
             contactLoc: 'الزقازيق، مصر',
             projectsTitle: 'أحدث المشاريع',
             projectKarofa: 'كاروفا | الامتثال الذكي',
@@ -137,9 +154,44 @@ document.addEventListener('DOMContentLoaded', () => {
             formName: 'اسمك',
             formEmail: 'بريدك الإلكتروني',
             formMsg: 'رسالتك',
-            formBtn: 'إرسال الرسالة'
+            formBtn: 'إرسال الرسالة',
+            roles: ['مطور .NET متكامل', 'مطور تطبيقات خلفية', 'مطور واجهات أمامية']
         }
     };
+
+    // Typewriter Effect
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typeSpeed = 100;
+
+    function type() {
+        const textElement = document.getElementById('typing-text');
+        if (!textElement) return;
+
+        const currentRoles = translations[currentLang].roles;
+        const currentText = currentRoles[roleIndex % currentRoles.length];
+
+        if (isDeleting) {
+            textElement.textContent = currentText.substring(0, charIndex--);
+            typeSpeed = 50;
+        } else {
+            textElement.textContent = currentText.substring(0, charIndex++);
+            typeSpeed = 100;
+        }
+
+        if (!isDeleting && charIndex === currentText.length + 1) {
+            isDeleting = true;
+            typeSpeed = 1500; // Pause at end
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            roleIndex++;
+            typeSpeed = 500;
+        }
+
+        setTimeout(type, typeSpeed);
+    }
+    type();
 
     function updateLanguage(lang) {
         currentLang = lang;
@@ -158,7 +210,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update Hero
         document.querySelector('.hero-text h1').innerHTML = translations[lang].heroTitle;
-        document.querySelector('.hero-text p').innerHTML = translations[lang].heroDesc;
         document.querySelector('.hero-buttons .btn-primary').textContent = translations[lang].heroWork;
         document.querySelector('.hero-buttons .btn-outline').innerHTML = `<i class="bi bi-download"></i> ${translations[lang].heroCV}`;
 
@@ -166,27 +217,54 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.section-title').forEach(title => {
             if (title.closest('#about')) title.textContent = translations[lang].aboutTitle;
             if (title.closest('#skills')) title.textContent = translations[lang].skillsTitle;
-            if (title.closest('#experience')) {
-                // Handle different titles in experience section
-            }
+            if (title.closest('#experience')) title.textContent = translations[lang].expTitle;
             if (title.closest('#projects')) title.textContent = translations[lang].projectsTitle;
             if (title.closest('#contact')) title.textContent = translations[lang].connectTitle;
         });
 
         // Specific Experience Titles
-        document.querySelector('#experience h2:nth-child(1)').textContent = translations[lang].internshipTitle;
-        document.querySelector('#experience div:nth-child(2) h2').textContent = translations[lang].educationTitle;
+        document.querySelector('#internship-content .section-title').textContent = translations[lang].internshipTitle;
+        document.querySelector('#education-content .section-title').textContent = translations[lang].educationTitle;
         
-        const internship = document.querySelector('.timeline-item');
-        if (internship) {
-            internship.querySelector('h3').textContent = translations[lang].internshipRole;
-            internship.querySelector('p:nth-of-type(2)').textContent = translations[lang].internshipDesc;
-        }
+        // Update Internship (Using specific IDs)
+        const dateIntern = document.getElementById('date-intern');
+        const roleIntern = document.getElementById('role-intern');
+        const compIntern = document.getElementById('comp-intern');
+        const descIntern = document.getElementById('desc-intern');
+
+        if (dateIntern) dateIntern.textContent = translations[lang].internshipDate;
+        if (roleIntern) roleIntern.textContent = translations[lang].internshipRole;
+        if (compIntern) compIntern.textContent = translations[lang].internshipCompany;
+        if (descIntern) descIntern.textContent = translations[lang].internshipDesc;
+
+        // Update Education & Training (Using specific IDs)
+        const dRmd = document.getElementById('date-rmd');
+        const tRmd = document.getElementById('title-rmd');
+        const oRmd = document.getElementById('org-rmd');
+        if (dRmd) dRmd.textContent = translations[lang].rmdDate;
+        if (tRmd) tRmd.textContent = translations[lang].rmdTitle;
+        if (oRmd) oRmd.textContent = translations[lang].rmdOrg;
+
+        const dMcit = document.getElementById('date-mcit');
+        const tMcit = document.getElementById('title-mcit');
+        const oMcit = document.getElementById('org-mcit');
+        if (dMcit) dMcit.textContent = translations[lang].mcitDate;
+        if (tMcit) tMcit.textContent = translations[lang].eduMCIT;
+        if (oMcit) oMcit.textContent = translations[lang].eduMCITDesc;
+
+        const dUni = document.getElementById('date-uni');
+        const tUni = document.getElementById('title-uni');
+        const oUni = document.getElementById('org-uni');
+        if (dUni) dUni.textContent = translations[lang].eduDate;
+        if (tUni) tUni.textContent = translations[lang].eduCS;
+        if (oUni) oUni.textContent = translations[lang].eduUni;
 
         // Update About Card
         const aboutCard = document.querySelector('#about .glass-card');
-        aboutCard.querySelector('p:nth-child(1)').textContent = translations[lang].aboutP1;
-        aboutCard.querySelector('p:nth-child(2)').textContent = translations[lang].aboutP2;
+        if (aboutCard) {
+            aboutCard.querySelector('p:nth-child(1)').textContent = translations[lang].aboutP1;
+            aboutCard.querySelector('p:nth-child(2)').textContent = translations[lang].aboutP2;
+        }
 
         // Update Projects
         const projects = document.querySelectorAll('.project-card');
@@ -195,29 +273,28 @@ document.addEventListener('DOMContentLoaded', () => {
         
         projects.forEach((card, index) => {
             if (projKeys[index]) {
-                card.querySelector('h3').textContent = translations[lang][projKeys[index]];
-                card.querySelector('p').textContent = translations[lang][projDescKeys[index]];
+                const titleEl = card.querySelector('h3');
+                const descEl = card.querySelector('p');
+                if (titleEl) titleEl.textContent = translations[lang][projKeys[index]];
+                if (descEl) descEl.textContent = translations[lang][projDescKeys[index]];
             }
         });
 
         // Update Contact Form
-        document.querySelector('.contact-info h3').innerHTML = translations[lang].connectDesc;
-        document.querySelector('.contact-info p').textContent = translations[lang].connectPrompt;
-        document.querySelector('input[placeholder="Your Name"], input[placeholder="اسمك"]').placeholder = translations[lang].formName;
-        document.querySelector('input[placeholder="Your Email"], input[placeholder="بريدك الإلكتروني"]').placeholder = translations[lang].formEmail;
-        document.querySelector('textarea').placeholder = translations[lang].formMsg;
-        document.querySelector('#contact-form button').textContent = translations[lang].formBtn;
-
-        // Update Education
-        const eduItems = document.querySelectorAll('#experience div:nth-child(2) .timeline-item');
-        if (eduItems[0]) {
-            eduItems[0].querySelector('h3').textContent = translations[lang].eduCS;
-            eduItems[0].querySelector('p').textContent = translations[lang].eduUni;
-        }
-        if (eduItems[1]) {
-            eduItems[1].querySelector('h3').textContent = translations[lang].eduMCIT;
-            eduItems[1].querySelector('p').textContent = translations[lang].eduUni; // Same uni if it's the second p? No, HTML says MCIT.
-        }
+        const connectTitle = document.querySelector('.contact-info h3');
+        const connectPrompt = document.querySelector('.contact-info p');
+        if (connectTitle) connectTitle.innerHTML = translations[lang].connectDesc;
+        if (connectPrompt) connectPrompt.textContent = translations[lang].connectPrompt;
+        
+        const nameInput = document.querySelector('input[name="name"]');
+        const emailInput = document.querySelector('input[name="email"]');
+        const msgInput = document.querySelector('textarea[name="message"]');
+        const submitBtn = document.querySelector('#contact-form button');
+        
+        if (nameInput) nameInput.placeholder = translations[lang].formName;
+        if (emailInput) emailInput.placeholder = translations[lang].formEmail;
+        if (msgInput) msgInput.placeholder = translations[lang].formMsg;
+        if (submitBtn) submitBtn.textContent = translations[lang].formBtn;
 
         // Update Contact Details
         document.querySelector('.contact-item:nth-child(2) span').textContent = translations[lang].contactLoc;

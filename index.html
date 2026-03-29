@@ -43,7 +43,7 @@
             <div class="hero-content">
                 <div class="hero-text reveal">
                     <h1>Crafting <span>Premium</span><br>Full Stack Experiences</h1>
-                    <p>I'm <strong>Adham Emad</strong>, a Full Stack .NET Developer. I specialize in building end-to-end solutions using ASP.NET Core, C#, and modern frontend frameworks to deliver robust and scalable software.</p>
+                    <p id="hero-p">I'm <strong>Adham Emad</strong>, a <span class="role-badge"><span id="typing-text"></span></span>. I specialize in building end-to-end solutions using ASP.NET Core, C#, and modern frontend frameworks to deliver robust and scalable software.</p>
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-primary">Check My Work</a>
                         <a href="CV.pdf" download class="btn btn-outline"><i class="bi bi-download"></i> Download CV</a>
@@ -101,30 +101,35 @@
 
     <!-- Experience & Education -->
     <section id="experience" class="container reveal">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
-            <div>
+        <div class="experience-grid">
+            <div id="internship-content">
                 <h2 class="section-title" style="text-align: left;">Internship</h2>
                 <div class="timeline">
                     <div class="timeline-item">
-                        <div class="timeline-date">Jun 2025 - Oct 2025</div>
-                        <h3>Backend Developer</h3>
-                        <p style="color: var(--primary);">Cloudcredits Technologies Pvt.Ltd</p>
-                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">Collaborated on 4 enterprise-level projects using ASP.NET Core. Implemented Clean Architecture and Repository Patterns to ensure maintainability.</p>
+                        <div class="timeline-date" id="date-intern">Jun 2025 - Oct 2025</div>
+                        <h3 id="role-intern">Backend Developer</h3>
+                        <p class="company" id="comp-intern" style="color: var(--primary);">Cloudcredits Technologies Pvt.Ltd</p>
+                        <p class="desc" id="desc-intern" style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">Collaborated on 4 enterprise-level projects using ASP.NET Core. Implemented Clean Architecture and Repository Patterns to ensure maintainability.</p>
                     </div>
                 </div>
             </div>
-            <div>
-                <h2 class="section-title" style="text-align: left;">Education</h2>
+            <div id="education-content">
+                <h2 class="section-title" style="text-align: left;">Education & Training</h2>
                 <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">2022 - 2026 (Exp)</div>
-                        <h3>B.Sc. Computer Science</h3>
-                        <p style="color: var(--primary);">Marsa Matrouh University</p>
+                    <div class="timeline-item" id="edu-rmd">
+                        <div class="timeline-date" id="date-rmd">Nov 2025 - Jul 2026</div>
+                        <h3 id="title-rmd">.NET Full Stack Developer</h3>
+                        <p class="org" id="org-rmd" style="color: var(--primary);">Digital Egypt Pioneers (RMD)</p>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">Oct 2025</div>
-                        <h3>Digitopia Stage 3</h3>
-                        <p style="color: var(--primary);">MCIT (E-Learning)</p>
+                    <div class="timeline-item" id="edu-mcit">
+                        <div class="timeline-date" id="date-mcit">Oct 2025</div>
+                        <h3 id="title-mcit">Digitopia Stage 3</h3>
+                        <p class="org" id="org-mcit" style="color: var(--primary);">MCIT (E-Learning)</p>
+                    </div>
+                    <div class="timeline-item" id="edu-main">
+                        <div class="timeline-date" id="date-uni">2022 - 2026 (Exp)</div>
+                        <h3 id="title-uni">B.Sc. Computer Science</h3>
+                        <p class="uni" id="org-uni" style="color: var(--primary);">Marsa Matrouh University</p>
                     </div>
                 </div>
             </div>
