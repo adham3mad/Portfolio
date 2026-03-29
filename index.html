@@ -1,147 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AdhamEmad</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="icon" href="icon.png">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="Portfolio.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adham Emad | Full Stack .NET Developer</title>
+    <meta name="description" content="Portfolio of Adham Emad, a Full Stack .NET Developer specializing in ASP.NET Core, C#, and Modern Web Technologies.">
+    <link rel="icon" href="images/icon.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="Portfolio.css">
 </head>
-
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-    <div class="container">
-      <a class="navbar-brand logo" href="#">adham</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#projects1">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about1">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills1">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact1">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <section class="hero">
-    <div class="row mt-5 align-items-center">
-      <div class="col-md-6 home-header">
-        <h1 class="display-5 fw-bold mt-5">Hi, I'm Adham Emad</h1>
-        <p class="lead">A Passionate Frontend Web Developer</p>
-        <p>Crafting engaging and responsive web experiences. Let's build something amazing together.</p>
-        <a href="#projects" class="btn btn-outline-primary m-2">View My Work</a>
-      </div>
-      <div class="col-md-6 mt-3 pjr">
-        <img src="5.png" class="my-photo" id="avatar" alt="My Profile Photo">
-      </div>
-    </div>
-  </section>
-  <hr id="projects1">
-  <section id="projects" class="Projects mt-4">
-    <h2 class="section-title mt-5">My Recent Work</h2>
-    <div class="container project-container">
-      <div class="pjl card project-card" id="content">
-        <img src="image.png" alt="">
-        <div class="card-body">
-          <h5 class="card-title">Mega GYM</h5>
-          <p class="card-text">About
-            A dynamic and user-friendly website designed for fitness enthusiasts and gym owners. Features include class
-            schedules, trainer profiles, membership plans, and a contact form. Fully responsive for all devices.</p>
-          <div class="d-flex justify-content-center align-items-center">
-            <a href="https://github.com/adham3mad/GYM2" class="btn btn-outline-primary btn-sm mb-2">GitHub Repo</a>
-          </div>
-        </div>
-      </div>
-      <div class="pjr card project-card" id="content">
-        <img src="image2.png" alt="">
-        <div class="card-body">
-          <h5 class="card-title">E-commerce Website</h5>
-          <p class="card-text">design develop a fully functional, user-friendly e-commerce platform that allows
-            customers to browse, select, and purchase products securely online, providing a management system for the
-            store owner.
-          <div class="d-flex justify-content-center align-items-center">
-            <div class="d-flex justify-content-center align-items-center">
-              <a id="about1" href="https://github.com/adham3mad/ITI-FrontEnd-Angular-Project"
-                class="btn btn-outline-primary btn-sm mb-2">GitHub Repo</a>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">Adham<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="toggles">
+                    <button id="theme-toggle" class="toggle-btn" title="Toggle Theme"><i class="bi bi-sun-fill"></i></button>
+                    <button id="lang-toggle" class="toggle-btn" title="Toggle Language">AR</button>
+                </div>
+                <a href="#contact" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Hire Me</a>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <section class="bg-light about mt-5">
-    <div class="container an">
-      <h2 class="section-title mt-3">A Little Bit About Me</h2>
-      <p id="skills1" class="mt-5">I am a self-taught frontend developer with a passion for clean design and
-        user-friendly experiences. I focus on building responsive web apps and continually improve my skills in modern
-        frameworks and tools.</p>
-    </div>
-  </section>
-  <section id="skills" class="py-5 skills mt-5">
-    <div class="container an">
-      <h2 class="section-title">My Skillset</h2>
-      <div class="row mt-5">
-        <div class="pjl col-md-6">
-          <h5>Languages & Frameworks</h5>
-          <ul class="mt-3">
-            <li>HTML, CSS, JavaScript, TypeScript</li>
-            <li>React, Bootstrap, Tailwind CSS</li>
-          </ul>
-        </div>
-        <div class="pjr col-md-6">
-          <h5>Tools & Concepts</h5>
-          <ul class="mt-3">
-            <li>Git, GitHub, VS Code, npm</li>
-            <li>Responsive Design, UI/UX, API Integration</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="contact1" class="bg-light py-5">
-    <div class="container an mt-5">
-      <h2 class="section-title">Let's Connect!</h2>
-      <p>I'm currently open to new opportunities. Feel free to reach out!</p>
-      <form id="contact-form">
-        <div class="mb-3">
-          <input type="text" class="form-control" placeholder="Your Name" name="name" required>
-        </div>
-        <div class="mb-3">
-          <input type="email" class="form-control" placeholder="Your Email" name="email" required>
-        </div>
-        <div class="mb-3">
-          <input type="text" class="form-control" placeholder="Subject" name="subject" required>
-        </div>
-        <div class="mb-3">
-          <textarea class="form-control" rows="4" placeholder="Message" name="message" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-outline-primary an">Send Message</button>
-      </form>
-    </div>
-  </section>
-  <footer class="mt-5">
-    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-      <div>
-        <p>abdelmawlaadhm58@gmail.com</p>
-      </div>
-      <div class="">
-        <a href="https://linkedin.com/in/adham3mad"><i class="bi bi-linkedin"></i></a>
-        <a href="https://github.com/adham3mad"><i class="bi bi-github"></i></a>
-        <a href="https://www.facebook.com/abdalmawla.adhm"><i class="bi bi-facebook"></i></a>
-        <a href="https://www.instagram.com/adham3madd/"><i class="bi bi-instagram"></i></a>
-      </div>
-    </div>
-    <div class="text-center mt-3">© 2025 AdhamEmad. All rights reserved.</div>
-  </footer>
-  <script src="Portfolio.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    </nav>
 
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text reveal">
+                    <h1>Crafting <span>Premium</span><br>Full Stack Experiences</h1>
+                    <p>I'm <strong>Adham Emad</strong>, a Full Stack .NET Developer. I specialize in building end-to-end solutions using ASP.NET Core, C#, and modern frontend frameworks to deliver robust and scalable software.</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">Check My Work</a>
+                        <a href="CV.pdf" download class="btn btn-outline"><i class="bi bi-download"></i> Download CV</a>
+                    </div>
+                </div>
+                <div class="hero-image reveal">
+                    <img src="images/5.jpeg" alt="Adham Emad">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="container reveal">
+        <h2 class="section-title">Professional Summary</h2>
+        <div class="glass-card">
+            <p>Computer Science student at Marsa Matrouh University with a deep passion for Full Stack development. My expertise lies in the .NET ecosystem, where I build clean, high-performance APIs and interactive user interfaces. I excel at bridging the gap between complex backend logic and seamless frontend experiences.</p>
+            <p style="margin-top: 1rem;">With practical experience in Clean Architecture and the Repository Pattern, I'm dedicated to writing maintainable code that scales. Currently seeking an internship or part-time role to contribute to impactful software solutions.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="container reveal">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category glass-card">
+                <h3>Backend (.NET)</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">ASP.NET Core Web API</span>
+                    <span class="skill-tag">Entity Framework Core</span>
+                    <span class="skill-tag">LINQ & Identity</span>
+                    <span class="skill-tag">xUnit Testing</span>
+                </div>
+            </div>
+            <div class="skill-category glass-card">
+                <h3>Frontend & UI</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">HTML5 / CSS3</span>
+                    <span class="skill-tag">JavaScript / TypeScript</span>
+                    <span class="skill-tag">React / Bootstrap</span>
+                    <span class="skill-tag">Responsive Design</span>
+                </div>
+            </div>
+            <div class="skill-category glass-card">
+                <h3>Tools & Patterns</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">SQL Server / MySQL</span>
+                    <span class="skill-tag">Clean Architecture</span>
+                    <span class="skill-tag">Postman & Swagger</span>
+                    <span class="skill-tag">Git / GitHub</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Education -->
+    <section id="experience" class="container reveal">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
+            <div>
+                <h2 class="section-title" style="text-align: left;">Internship</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Jun 2025 - Oct 2025</div>
+                        <h3>Backend Developer</h3>
+                        <p style="color: var(--primary);">Cloudcredits Technologies Pvt.Ltd</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">Collaborated on 4 enterprise-level projects using ASP.NET Core. Implemented Clean Architecture and Repository Patterns to ensure maintainability.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2 class="section-title" style="text-align: left;">Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022 - 2026 (Exp)</div>
+                        <h3>B.Sc. Computer Science</h3>
+                        <p style="color: var(--primary);">Marsa Matrouh University</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Oct 2025</div>
+                        <h3>Digitopia Stage 3</h3>
+                        <p style="color: var(--primary);">MCIT (E-Learning)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="container reveal">
+        <h2 class="section-title">Latest Projects</h2>
+        <div class="projects-grid">
+            <!-- Project: Karofa -->
+            <div class="project-card glass-card">
+                <div class="project-img">
+                    <img src="images/karofa-platform.png" alt="Karofa - Legal AI Platform" onerror="this.src='images/hey.png'; this.style.opacity='0.8'">
+                </div>
+                <div class="project-info">
+                    <h3>Karofa | AI Compliance</h3>
+                    <p>An advanced legal research platform for Saudi laws. Features AI-driven document analysis, compliance checks, and a comprehensive legal database dashboard.</p>
+                    <div class="project-tags">
+                        <span class="skill-tag">.NET Core</span>
+                        <span class="skill-tag">AI / ML</span>
+                        <span class="skill-tag">React</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/adham3mad/Fermy" target="_blank" class="project-link"><i class="bi bi-github"></i> Source</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project: Qatar Contracting -->
+            <div class="project-card glass-card">
+                <div class="project-img">
+                    <img src="images/qatar.png" alt="Qatar Contracting Portal" onerror="this.src='images/hey.png'; this.style.opacity='0.8'">
+                </div>
+                <div class="project-info">
+                    <h3>Qatar Contracting Portal</h3>
+                    <p>A high-end service portal for a leading contracting firm. Features project showcases, service modules, and a professional appointment system.</p>
+                    <div class="project-tags">
+                        <span class="skill-tag">Full Stack</span>
+                        <span class="skill-tag">.NET Core</span>
+                        <span class="skill-tag">Modern UI</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/adham3mad/Qatar-Contracting-Portal.git" target="_blank" class="project-link"><i class="bi bi-github"></i> Source</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project: Cloudcredits Landing -->
+            <div class="project-card glass-card">
+                <div class="project-img">
+                    <img src="images/Landing page -cloude cridets.png" alt="Cloudcredits Internship Landing Page" onerror="this.src='images/hey.png'; this.style.opacity='0.8'">
+                </div>
+                <div class="project-info">
+                    <h3>Cloudcredits Landing</h3>
+                    <p>A comprehensive landing page for a Frontend Web Development Internship. Features campaign details, application forms, and program overview.</p>
+                    <div class="project-tags">
+                        <span class="skill-tag">Web Design</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">UX/UI</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/adham3mad/Landing-page" target="_blank" class="project-link"><i class="bi bi-github"></i> Source</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project: Mega GYM -->
+            <div class="project-card glass-card">
+                <div class="project-img">
+                    <img src="images/gym.png" alt="Mega GYM Portfolio">
+                </div>
+                <div class="project-info">
+                    <h3>Mega GYM Platform</h3>
+                    <p>A dynamic and user-friendly website for fitness enthusiasts. Features class schedules, trainer profiles, and membership plans. Fully responsive.</p>
+                    <div class="project-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">.NET Core</span>
+                        <span class="skill-tag">Responsive</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/adham3mad/GYM2" target="_blank" class="project-link"><i class="bi bi-github"></i> Source</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project: E-commerce -->
+            <div class="project-card glass-card">
+                <div class="project-img">
+                    <img src="images/E-commercr.png" alt="E-commerce Website">
+                </div>
+                <div class="project-info">
+                    <h3>E-commerce Ecosystem</h3>
+                    <p>A fully functional, user-friendly e-commerce platform. Allows customers to browse, select, and purchase products securely online.</p>
+                    <div class="project-tags">
+                        <span class="skill-tag">Angular</span>
+                        <span class="skill-tag">.NET Core</span>
+                        <span class="skill-tag">Full Stack</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/adham3mad/ITI-FrontEnd-Angular-Project" target="_blank" class="project-link"><i class="bi bi-github"></i> Source</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project: Library Automation -->
+            <div class="project-card glass-card">
+                <div class="project-img">
+                    <img src="images/LMS.png" alt="Library Management System" style="filter: hue-rotate(90deg); opacity: 0.7;">
+                </div>
+                <div class="project-info">
+                    <h3>Library Automation</h3>
+                    <p>Automated system for managing core library functions. Built with ASP.NET MVC, focusing on seamless database operations.</p>
+                    <div class="project-tags">
+                        <span class="skill-tag">.NET MVC</span>
+                        <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">Full Stack</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/adham3mad/LMS-MVC" target="_blank" class="project-link"><i class="bi bi-github"></i> Source</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project: Sanad -->
+            <div class="project-card glass-card">
+                <div class="project-img">
+                    <img src="images/Sanad2.png" alt="Sanad Platform" style="filter: hue-rotate(-90deg); opacity: 0.7;">
+                </div>
+                <div class="project-info">
+                    <h3>Sanad - Legal Tech</h3>
+                    <p>AI-powered consultation platform for criminal law in Egypt. Focused on accessibility and legal accuracy.</p>
+                    <div class="project-tags">
+                        <span class="skill-tag">.NET Web API</span>
+                        <span class="skill-tag">AI / ML</span>
+                        <span class="skill-tag">Backend</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/adham3mad/Sanad-backend" target="_blank" class="project-link"><i class="bi bi-github"></i> Source</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container reveal">
+        <h2 class="section-title">Let's Connect</h2>
+        <div class="contact-container glass-card">
+            <div class="contact-info">
+                <h3>Turning vision into <span>digital reality</span>.</h3>
+                <p>Ready to discuss your next project or internship opportunity. My inbox is always open.</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="bi bi-envelope-fill"></i>
+                        <span>abdelmawlaadhm58@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <span>Zagazig, Egypt</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="bi bi-telephone-fill"></i>
+                        <span>+20 1022705121</span>
+                    </div>
+                </div>
+            </div>
+            <form id="contact-form">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding: 4rem 0; text-align: center; border-top: 1px solid var(--glass-border);">
+        <div class="container">
+            <div class="social-links" style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem;">
+                <a href="https://github.com/adham3mad" target="_blank" style="color: var(--text-muted); font-size: 1.5rem;"><i class="bi bi-github"></i></a>
+                <a href="https://linkedin.com/in/adham3mad" target="_blank" style="color: var(--text-muted); font-size: 1.5rem;"><i class="bi bi-linkedin"></i></a>
+                <a href="https://www.instagram.com/adham3madd/" target="_blank" style="color: var(--text-muted); font-size: 1.5rem;"><i class="bi bi-instagram"></i></a>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 Adham Emad. Built for excellence.</p>
+        </div>
+    </footer>
+
+    <script src="Portfolio.js"></script>
+</body>
 </html>
