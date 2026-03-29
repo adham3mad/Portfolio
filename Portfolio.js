@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const translations = {
         en: {
-            navAbout: 'About',
+            navAbout: 'About Me',
             navSkills: 'Skills',
             navExperience: 'Experience',
             navProjects: 'Projects',
@@ -56,8 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
             heroDesc: "I'm <strong>Adham Emad</strong>, a Full Stack .NET Developer. I specialize in building end-to-end solutions using ASP.NET Core, C#, and modern frontend frameworks to deliver robust and scalable software.",
             heroWork: 'Check My Work',
             heroCV: 'Download CV',
-            aboutTitle: 'Professional Summary',
-            aboutP1: 'Computer Science student at Marsa Matrouh University with a deep passion for Full Stack development. My expertise lies in the .NET ecosystem, where I build clean, high-performance APIs and interactive user interfaces.',
+            aboutTitle: 'About Me',
+            aboutP1: 'Computer Science student at Marsa Matrouh University with a deep passion for Full Stack development. My expertise lies in the .NET ecosystem, where I build clean, high-performance APIs and interactive user interfaces. I excel at bridging the gap between complex backend logic and seamless frontend experiences.',
             aboutP2: "With practical experience in Clean Architecture and the Repository Pattern, I'm dedicated to writing maintainable code that scales. Currently seeking an internship or part-time role to contribute to impactful software solutions.",
             skillsTitle: 'Technical Skills',
             expTitle: 'Professional Timeline',
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
             roles: ['Full Stack .NET Developer', 'Backend Specialist', 'Frontend Architect']
         },
         ar: {
-            navAbout: 'حول',
+            navAbout: 'عني',
             navSkills: 'المهارات',
             navExperience: 'الخبرة',
             navProjects: 'المشاريع',
@@ -112,8 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
             heroDesc: 'أنا <strong>أدهم عماد</strong>، مطور Full Stack .NET. متخصص في بناء حلول متكاملة باستخدام ASP.NET Core و C# وأحدث أطر العمل الأمامية لتقديم برمجيات قوية وقابلة للتوسع.',
             heroWork: 'أعمالي',
             heroCV: 'تحميل CV',
-            aboutTitle: 'ملخص مهني',
-            aboutP1: 'طالب علوم حاسب في جامعة مرسى مطروح بشغف عميق لتطوير Full Stack. تكمن خبرتي في نظام .NET البيئي، حيث أقوم ببناء واجهات برمجية نظيفة وعالية الأداء وواجهات مستخدم تفاعلية.',
+            aboutTitle: 'من أنا',
+            aboutP1: 'طالب علوم حاسب في جامعة مرسى مطروح بشغف عميق لتطوير Full Stack. تكمن خبرتي في نظام .NET البيئي، حيث أقوم ببناء واجهات برمجية نظيفة وعالية الأداء وواجهات مستخدم تفاعلية. أبرع في سد الفجوة بين منطق الواجهة الخلفية المعقد وتجارب الواجهة الأمامية السلسة.',
             aboutP2: 'مع خبرة عملية في Clean Architecture ونمط Repository، أنا مخصص لكتابة كود قابل للصيانة والتوسع. أبحث حالياً عن تدريب أو دور بدوام جزئي للمساهمة في حلول برمجية مؤثرة.',
             skillsTitle: 'المهارات التقنية',
             expTitle: 'المسار المهني',
@@ -210,6 +210,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update Hero
         document.querySelector('.hero-text h1').innerHTML = translations[lang].heroTitle;
+        const heroP = document.getElementById('hero-p');
+        if (heroP) heroP.innerHTML = translations[lang].heroDesc;
         document.querySelector('.hero-buttons .btn-primary').textContent = translations[lang].heroWork;
         document.querySelector('.hero-buttons .btn-outline').innerHTML = `<i class="bi bi-download"></i> ${translations[lang].heroCV}`;
 
@@ -309,6 +311,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial language setup
     if (currentLang === 'ar') {
         updateLanguage('ar');
+    }
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.className = 'bi bi-x-lg';
+            } else {
+                icon.className = 'bi bi-list';
+            }
+        });
+
+        // Close menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.querySelector('i').className = 'bi bi-list';
+            });
+        });
     }
 
     // Form Handling
